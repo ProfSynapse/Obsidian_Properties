@@ -4,7 +4,7 @@ import json
 import re
 
 # Specify the directory containing the notes
-notes_directory = "C:/Users/Joseph/Documents/Professor Synapse_6.2.24/02 - 🚀 Learning/🏺 History and Culture/Art"
+notes_directory = "G:/My Drive/Professor Synapse/02 - 🚀 Learning/🤔 Philosophy"
 
 # Prompt for generating front matter
 front_matter_prompt = """
@@ -57,14 +57,17 @@ Use the standardized ontology of relationship types and structure your output as
 * `#produces`: Indicates that the subject creates or generates the object as an output
 
 ## Examples
-Front Matter will be organized into ONE of 7 different types, and generated following the pattern type.
+Front Matter will be organized into ONE of 8 different types, and generated following the pattern type.
 
 ### Person
 ---
 title: Albert Einstein
 description: German-born theoretical physicist, widely regarded as one of the most influential scientists of the 20th century.
 type: person
-tags: "[Physicist, Scientist, Theorist]"
+tags: 
+- "Physicist"
+- "Scientist"
+- "Theorist"
 relationships:
 - "#developed [[Theory of Relativity]]"
 - "#influenced [[Quantum Mechanics]]"
@@ -79,7 +82,11 @@ deathdate: 1955-04-18
 title: Microsoft Corporation
 description: American multinational technology corporation that develops, licenses, and supports a wide range of software products, services, and devices.
 type: group
-tags: [Technology, Software, Computing]
+tags: 
+- "Technology
+- "Software"
+- "Computing"
+- "SatyaNadella"
 relationships:
 - "#founded_by [[Bill Gates]], [[Paul Allen]]"
 - "#headquartered_in [[Redmond, Washington]]"
@@ -92,7 +99,11 @@ founded: 1975-04-04
 ---
 title: World War II
 description: Global war that lasted from 1939 to 1945, involving most of the world's nations and resulting in significant loss of life and destruction.
-tags: [War, Conflict, 20th Century]
+tags:
+- "War"
+- "Conflict"
+- "20th_Century"
+- "WinstonChurchill"
 type: event
 relationships:
 - "#caused_by [[Rise of Fascism]], [[Invasion of Poland]]"
@@ -108,7 +119,11 @@ end_date: 1945-09-02
 title: Quantum Mechanics
 description: Fundamental theory in physics that describes the nature of matter and energy at the atomic and subatomic levels.
 type: concept
-tags: [Physics, Science, Quantum Theory]
+tags: 
+- "Physics"
+- "Science"
+- "Quantum_Theory"
+- "MaxPlanck"
 relationships:
 - "#developed_by [[Max Planck]], [[Werner Heisenberg]], [[Erwin Schrödinger]]"
 - "#explains [[Wave-Particle Duality]], [[Uncertainty Principle]]"
@@ -121,7 +136,10 @@ relationships:
 title: 1984
 description: Dystopian novel by George Orwell, published in 1949, depicting a totalitarian society and the consequences of mass surveillance and repressive control.
 type: work
-tags: [Literature, Dystopia, Science Fiction]
+tags:
+- "Literature"
+- "Dystopia"
+- "Science_Fiction"
 relationships:
 - "#authored_by [[George Orwell]]"
 - "#influenced_by [[Stalinism]], [[Totalitarianism]]"
@@ -135,7 +153,10 @@ published_date: 1949-06-08
 title: New York City
 description: Most populous city in the United States, known for its diverse culture, iconic landmarks, and global influence in finance, media, art, fashion, and entertainment.
 type: place
-tags: [City, Metropolis, United States]
+tags: 
+- "City" 
+- "Metropolis" 
+- "United_States"
 relationships:
 - "#located_in [[New York State]], [[United States]]"
 - "#consists_of [[Manhattan]], [[Brooklyn]], [[Queens]], [[The Bronx]], [[Staten Island]]"
@@ -150,7 +171,10 @@ population: 8,336,817 (2019)
 title: Conversation with ChatGPT about Artificial Intelligence
 description: A dialogue between a human and ChatGPT, an AI language model, discussing the implications and future of artificial intelligence.
 type: conversation
-tags: [Artificial Intelligence, ChatGPT, Language Models]
+tags: 
+- "Artificial_Intelligence" 
+- "ChatGPT"
+- "Language_Models"
 relationships:
 - "#has_participant [[Human]]"
 - "#has_participant [[ChatGPT]]"
@@ -163,10 +187,31 @@ participants:
 date: 2023-06-10
 ---
 
+### Code
+---
+title: Quicksort Algorithm Implementation
+description: An efficient sorting algorithm that recursively divides an array into sub-arrays, sorts them, and combines them to produce a sorted array.
+type: code
+tags: 
+- "Algorithms"
+- "Sorting"
+- "Recursion"
+relationships:
+- "#implements [[Divide and Conquer]]"
+- "#has_time_complexity [[O(n log n)]]"
+- "#has_space_complexity [[O(log n)]]"
+- "#related_to [[Merge Sort]], [[Heapsort]]"
+- "#used_in [[Data Processing]], [[Searching]]"
+language: "Python"
+version: 
+---
+
 # RULES
 - You can add additional properties as make sense, and shown in the examples based on the context, but ALL YAML must include the title, description, type tags, and relationships properties.
-- ensure that all relationships are organized following the pattern of -"#predicate [[object]]"
+- ensure that all relationships are organized following the pattern of - "#predicate [[object]]"
 - All dates must be formatted as YYYY-MM-DD
+- "" are only included in relationships and tags
+- All tags with multiple words must use an "_" such as "Artificial_Intelligence" or if it is a name concatenate to "AlbertEinstein"
 
 Here is the content to generate the YAML front matter for:
 
